@@ -39,3 +39,20 @@
 
 # debug information files
 *.dwo
+
+# Ігнорувати папку збірки (найважливіше!)
+build/
+cmake-build-debug/
+cmake-build-release/
+out/
+
+# Ігнорувати налаштування Visual Studio
+.vs/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+
+# Ігнорувати кеш CMake (якщо ви запускали його не в папці build)
+CMakeCache.txt
+CMakeFiles/
