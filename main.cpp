@@ -10,7 +10,7 @@ static bool isPaused = false;
 
 void renderScene(OpenglRenderSystem& rs)
 {
-	static const auto& data = GeometryPrimitives::createCubeVertices();
+	static const auto& data = GeometryPrimitives::createPyramidVertices();
 	rs.renderTriangleSoup(data);
 }
 

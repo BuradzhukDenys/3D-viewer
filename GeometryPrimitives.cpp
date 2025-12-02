@@ -62,3 +62,54 @@ std::vector<Vertex> GeometryPrimitives::createCubeVertices()
 
     return cubeVertices;
 }
+
+std::vector<Vertex> GeometryPrimitives::createPyramidVertices()
+{
+    std::vector<Vertex> pyramidVertices;
+
+    glm::vec3 positions[] = {
+        { 0.0f,  0.5f,  0.0f}, // Apex
+        {-0.5f, -0.5f, -0.5f}, // Base - Back Left
+        { 0.5f, -0.5f, -0.5f}, // Base - Back Right
+        { 0.5f, -0.5f,  0.5f}, // Base - Front Right
+        {-0.5f, -0.5f,  0.5f}  // Base - Front Left
+    };
+
+    glm::vec3 normals[] = {
+        { 0.0f,  0.4472f, -0.8944f}, // Back face
+        { 0.8944f,  0.4472f,  0.0f}, // Right face
+        { 0.0f,  0.4472f,  0.8944f}, // Front face
+        {-0.8944f,  0.4472f,  0.0f}, // Left face
+        { 0.0f, -1.0f,  0.0f}        // Base face
+    };
+
+    glm::vec3 colors[] = {
+        {1.0f, 0.0f, 0.0f}, // Red
+        {0.0f, 1.0f, 0.0f}, // Green
+        {0.0f, 0.0f, 1.0f}, // Blue
+        {1.0f, 1.0f, 0.0f}, // Yellow
+        {1.0f, 0.0f, 1.0f}  // Magenta
+    };
+
+    unsigned int indices[] = {
+        0, 1, 2, // Back face
+        0, 2, 3, // Right face
+        0, 3, 4, // Front face
+        0, 4, 1, // Left face
+        1, 4, 3, // Base face - first triangle
+        3, 2, 1  // Base face - second triangle
+    };
+
+    for (int i = 0; i < 18; i++)
+    {
+        unsigned int index = indices[i];
+        int face = i / 3; // Determine the face based on the triangle index
+        Vertex vertex;
+        vertex.position = positions[index];
+        vertex.normal = normals[face];
+        vertex.color = colors[face];
+        pyramidVertices.push_back(vertex);
+    }
+
+    return pyramidVertices;
+}

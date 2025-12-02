@@ -6,4 +6,7 @@
 namespace GeometryPrimitives
 {
     std::vector<Vertex> createCubeVertices();
+    //---------------------------------
+    std::vector<Vertex> createPyramidVertices();
+    //---------------------------------
 }
