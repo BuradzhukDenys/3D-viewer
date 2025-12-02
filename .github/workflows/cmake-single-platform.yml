@@ -4,11 +4,7 @@ name: CMake on a single platform
 
 on:
   push:
-    branches:
-      - "main"
-      - "feature/**"
-      - "testCube"
-      - "testPyramid"
+    branches: [ "main", "feature/**", "testCube", "testPyramid" ]
   pull_request:
     branches: [ "main" ]
 
@@ -28,12 +24,12 @@ jobs:
 
     - name: Setup vcpkg
       uses: lukka/run-vcpkg@v11
-      id: runvcpkg
       with:
+        vcpkgGitCommitID: '5e5d0e1cd7785623065e77eff011afdeec1a3574'
         vcpkgJsonGlob: ''
 
     - name: Install libraries
-      run: |
+      run: | 
         $env:VCPKG_ROOT\vcpkg install glm:x64-windows
         $env:VCPKG_ROOT\vcpkg install glfw3:x64-windows
       shell: powershell
