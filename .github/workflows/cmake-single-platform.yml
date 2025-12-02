@@ -30,8 +30,8 @@ jobs:
 
     - name: Install libraries
       run: | 
-        $env:VCPKG_ROOT\vcpkg install glm:x64-windows
-        $env:VCPKG_ROOT\vcpkg install glfw3:x64-windows
+        & "${env:VCPKG_ROOT}\vcpkg" install glm:x64-windows
+        & "${env:VCPKG_ROOT}\vcpkg" install glfw3:x64-windows
       shell: powershell
   
     - name: Configure CMake
