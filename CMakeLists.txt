@@ -19,6 +19,8 @@ add_executable(My3DViewer
     Vertex.h
     OpenglRenderSystem.h
     OpenglRenderSystem.cpp
+    GeometryPrimitives.h
+    GeometryPrimitives.cpp
     glad.c)
 
 #Підключення бібліотек
