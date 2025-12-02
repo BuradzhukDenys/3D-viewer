@@ -16,6 +16,9 @@ add_executable(My3DViewer
     main.cpp
     ViewerWindow.h
     ViewerWindow.cpp
+    Vertex.h
+    OpenglRenderSystem.h
+    OpenglRenderSystem.cpp
     glad.c)
 
 #Підключення бібліотек
